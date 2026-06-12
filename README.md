@@ -1,4 +1,4 @@
-# 📠 Electronic Turing Machine Prototype
+# 📠 Machine de Turing
 
 Ce projet implémente un prototype fonctionnel et physique d'une **Machine de Turing** sur microcontrôleur **Microchip PIC24**. Il utilise une matrice de LED RGB pilotée en SPI pour afficher l'état de la bande et de la tête de lecture, ainsi que des boutons-poussoirs pour configurer la bande manuellement avant de lancer un algorithme de calcul (ici, un algorithme d'addition binaire).
 
