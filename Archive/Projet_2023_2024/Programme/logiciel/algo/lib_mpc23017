@@ -1,0 +1,53 @@
+LIB_MPC23017
+VARIABLES
+    TxBuffer : Tableau de 16 octets
+DEBUT
+
+FONCTION mcp23017_init (mcp23017_descripteur *pMPC23017, mcp23017_config *pMPC23017config) : mcp23017_erreur
+VARIABLES
+    i2c_config i2cCfg
+    i2c_erreur   Res
+DEBUT
+    SI pMPC23017config->initType != INIT_ALREADY_DONE
+        SWITCH pMPC23017config->initType
+            case INIT_WITH_I2C1:
+                i2c_init(I2C_1);
+            case INIT_WITH_I2C2:
+                i2c_init(I2C_1;
+        FIN SWITCH
+    FIN SI
+    pMPC23017->pi2c = pMPC23017config->pi2c;
+    pMPC23017->i2c_Address = pMPC23017config->i2c_Address;
+        
+    RETOURNER MCP23017_OK
+FIN mcp23017_init
+
+FONCTION mcp23017_write_reg(const mcp23017_desc_t *pMCP23017,uint8_t RegAddr, uint8_t RegValue) : mcp23017_erreur
+VARIABLES
+    mcp23017_erreur Res;
+DEBUT
+    TxBuffer[0] = RegAddr;
+    TxBuffer[1] = RegValue;
+     
+    Res = i2c_write(pMCP23017->pi2c, pMCP23017->i2c_Address,TxBuffer,2);
+    SI Res != I2C_OK
+        RETOURNER MCP23017_ERROR;
+    FIN SI
+    
+    RETOURNER MCP23017_OK;
+FIN mcp23017_write_reg
+
+FONCTION mcp230173_read_reg(const mcp23017_desc_t *pMCP23017,uint8_t RegAddr, uint8_t *pRegValue) : mpc23017_erreur
+VARIABLES
+    i2c_erreur Res;
+DEBUT
+    TxBuffer[0] = RegAddr & 0x0F;
+    
+    Res = i2c_write_then_read(pMCP23017->pi2c, pMCP23017->i2c_Address, TxBuffer, 1, pRegValue,1);
+    SI Res != I2C_OK
+        RETOURNER MCP23017_ERROR;
+    FIN SI
+
+    RETOURNER MCP23017_OK;
+FIN mcp23017_read_reg
+FIN LIB_MCP23017

@@ -1,0 +1,142 @@
+LIB_MACHINE_DE_TURING
+VARIABLES
+    mcp23017_desc_t mpc23017_7_seg
+    mcp23017_desc_t mcp23017_bp
+    mcp23017_desc_t mcp23017_general
+    i2c_desc_t I2CModule
+
+ENUMERATIONS
+mcp23017_err_t
+    MCP23017_OK
+    MCP23017_ERROR
+    
+mcp23017_i2c_init_type_t
+    INIT_WITH_I2C1
+    INIT_WITH_I2C2
+    INIT_ALREADY_DONE
+
+working_mode_t
+    MANUAL_MODE
+    AUTOMATIC_MODE
+
+STRUCTURES
+mcp23017_desc_t
+    i2c_desc_t  *pi2c
+    uint8_t     i2c_Address
+    
+mcp23017_config_t
+    i2c_desc_t  *pi2c;                      
+    mcp23017_i2c_init_type_t    initType;   
+    uint8_t i2c_Address;
+ 
+
+machine_de_turing_desc_t
+    uint8_t state
+    uint8_t symbol
+    uint8_t next_state
+    uint8_t next_symbol
+    uint8_t next_move
+
+CONSTANTES
+    MCP23017_7_SEG_ADDRESS      0100001
+    MCP23017_BP_ADDRESS         0100010
+    MCP23017_GENERAL_ADDRESS    0100011
+
+    MCP23017_IOCONA_ADDRESS     0x0A
+    MCP23017_IOA_ADDRESS        0x12
+    MCP23017_IOA_ADDRESS        0x13
+
+DEBUT
+PROCEDURE Initialiser()
+VARIABLES
+    mcp23017_err_t   Res;
+    mcp23017_config_t    mcpCfg;
+DEBUT
+    Configuration du port B en sortie
+    
+    // MPC23017 7 segs
+    mcpCfg.pi2c = &I2CModule;
+    Initialisation avec I2C_1
+    Adresse = MCP23017_7_SEG_ADRESS;
+    
+    Res = mcp23017_init(@mpc23017_7_seg, @mcpCfg)
+    SI Res != MCP23017_OK ALORS
+        error_handler()
+    FIN SI
+
+    // MPC23017 BP
+    mcpCfg.pi2c = &I2CModule;
+    Initialisation avec I2C_1
+    Adresse = MCP23017_BP_ADDRESS;
+    
+    Res = mcp23017_init(@mpc23017_bp, @mcpCfg)
+    SI Res != MCP23017_OK ALORS
+        error_handler()
+    FIN SI
+
+    // MPC23017 GENERAL
+    mcpCfg.pi2c = &I2CModule;
+    Initialisation avec I2C_1
+    Adresse = MCP23017_GENERAL_ADDRESS;
+    
+    Res = mcp23017_init(@mpc23017_bp, @mcpCfg)
+    SI Res != MCP23017_OK ALORS
+        error_handler()
+    FIN SI
+
+FIN Initialiser()
+
+PROCEDURE MainTask()
+VARIABLES
+    uint8_t working_mode
+    uint8_t next_step
+    led_color_t rw_pointer_color
+DEBUT
+    Res = mcp23017_read_reg(@mcp23017_bp, mcp23017_bp_portA_address, @working_mode)
+    SI Res != MCP23017_OK ALORS
+        working_mode = MANUAL_MODE
+    FIN SI
+
+    TANT QUE mtu->state != ACCEPT_STATE FAIRE
+        get_next_state(mtu->state, mtu->symbol, mtu->next_state)
+        get_next_symbol(mtu->state, mtu->symbol, mtu->next_symbol)
+        get_next_move(mtu->state, mtu->symbol, mtu->next_move)
+        set_next_move(mtu->position, mtu->next_move)
+
+        sk9822_set_LED_rgb(sk9822_1, mtu->position, mtu->symbol)
+        sk9822_set_LED_rgb(sk9822_1, mtu->position, rw_pointer_color)
+
+        RegValue = int_to_bin(mtu->state)
+        Res = mcp23017_write_reg(@mcp23017_7_seg, mcp23017_7_seg_portA_address, RegValue)
+        SI Res != MCP23017_OK ALORS
+            error_handler()
+        FIN SI
+
+        RegValue = int_to_bin(mtu->next_state)
+        Res = mcp23017_write_reg(@mcp23017_7_seg, mcp23017_7_seg_portB_address, RegValue)
+        SI Res != MCP23017_OK ALORS
+            error_handler()
+        FIN SI
+
+        RegValue = generate_general_reg(mtu->symbol, mtu->next_symbol, mtu->next_move)
+        Res = mcp23017_write_reg(@mcp23017_general, mcp23017_general_portA_address, RegValue)
+        SI Res != MCP23017_OK ALORS
+            error_handler()
+        FIN SI
+
+        mtu->state = mtu->next_state
+        mtu->symbol = mtu->next_symbol
+
+        SI working_mode = MANUAL_MODE ALORS
+            TANT QUE next_step = 0 FAIRE
+            FIN TANT QUE
+        SINON
+            attendre(2000)
+        FIN SI
+FIN MainTask()
+
+PROCEDURE error_handler()
+    LATBbits.LATB15 = 1;
+    TANT QUE 1 FAIRE
+    FIN TANT QUE
+FIN error_handler

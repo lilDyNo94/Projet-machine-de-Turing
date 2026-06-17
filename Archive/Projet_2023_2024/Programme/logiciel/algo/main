@@ -1,0 +1,9 @@
+PROCEDURE initialiser():
+DEBUT
+	
+FIN initialiser
+
+PROCEDURE MainTask():
+DEBUT
+
+FIN mainTask
