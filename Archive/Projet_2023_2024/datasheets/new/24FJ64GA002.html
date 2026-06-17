@@ -1,0 +1,536 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<body bgcolor="#FFFFE0" style="font-family: sans-serif">
+<table frame=box rules=cols cellpadding=3 style="margin:10px;" summary="Primary Oscillator Select">
+<tr style="border: 2px solid;"><th>CONFIG2_POSCMOD</th><th>Primary Oscillator Select</th></tr>
+<tr><td>CONFIG2_POSCMOD = EC</td><td><font size="2">
+EC Oscillator mode selected
+</font></td></tr>
+<tr><td>CONFIG2_POSCMOD = XT</td><td><font size="2">
+XT Oscillator mode selected
+</font></td></tr>
+<tr><td>CONFIG2_POSCMOD = HS</td><td><font size="2">
+HS Oscillator mode selected
+</font></td></tr>
+<tr><td>CONFIG2_POSCMOD = NONE</td><td><font size="2">
+Primary oscillator disabled
+</font></td></tr>
+</table>
+<table frame=box rules=cols cellpadding=3 style="margin:10px;" summary="Primary Oscillator Select">
+<tr style="border: 2px solid;"><th>POSCMOD</th><th>Primary Oscillator Select</th></tr>
+<tr><td>POSCMOD = EC</td><td><font size="2">
+EC Oscillator mode selected
+</font></td></tr>
+<tr><td>POSCMOD = XT</td><td><font size="2">
+XT Oscillator mode selected
+</font></td></tr>
+<tr><td>POSCMOD = HS</td><td><font size="2">
+HS Oscillator mode selected
+</font></td></tr>
+<tr><td>POSCMOD = NONE</td><td><font size="2">
+Primary oscillator disabled
+</font></td></tr>
+</table>
+<table frame=box rules=cols cellpadding=3 style="margin:10px;" summary="I2C1 Pin Location Select">
+<tr style="border: 2px solid;"><th>CONFIG2_I2C1SEL</th><th>I2C1 Pin Location Select</th></tr>
+<tr><td>CONFIG2_I2C1SEL = SEC</td><td><font size="2">
+Use alternate SCL1/SDA1 pins
+</font></td></tr>
+<tr><td>CONFIG2_I2C1SEL = PRI</td><td><font size="2">
+Use default SCL1/SDA1 pins
+</font></td></tr>
+</table>
+<table frame=box rules=cols cellpadding=3 style="margin:10px;" summary="I2C1 Pin Location Select">
+<tr style="border: 2px solid;"><th>I2C1SEL</th><th>I2C1 Pin Location Select</th></tr>
+<tr><td>I2C1SEL = SEC</td><td><font size="2">
+Use alternate SCL1/SDA1 pins
+</font></td></tr>
+<tr><td>I2C1SEL = PRI</td><td><font size="2">
+Use default SCL1/SDA1 pins
+</font></td></tr>
+</table>
+<table frame=box rules=cols cellpadding=3 style="margin:10px;" summary="IOLOCK Protection">
+<tr style="border: 2px solid;"><th>CONFIG2_IOL1WAY</th><th>IOLOCK Protection</th></tr>
+<tr><td>CONFIG2_IOL1WAY = OFF</td><td><font size="2">
+IOLOCK may be changed via unlocking seq
+</font></td></tr>
+<tr><td>CONFIG2_IOL1WAY = ON</td><td><font size="2">
+Once IOLOCK is set, cannot be changed
+</font></td></tr>
+</table>
+<table frame=box rules=cols cellpadding=3 style="margin:10px;" summary="IOLOCK Protection">
+<tr style="border: 2px solid;"><th>IOL1WAY</th><th>IOLOCK Protection</th></tr>
+<tr><td>IOL1WAY = OFF</td><td><font size="2">
+IOLOCK may be changed via unlocking seq
+</font></td></tr>
+<tr><td>IOL1WAY = ON</td><td><font size="2">
+Once IOLOCK is set, cannot be changed
+</font></td></tr>
+</table>
+<table frame=box rules=cols cellpadding=3 style="margin:10px;" summary="Primary Oscillator Output Function">
+<tr style="border: 2px solid;"><th>CONFIG2_OSCIOFNC</th><th>Primary Oscillator Output Function</th></tr>
+<tr><td>CONFIG2_OSCIOFNC = ON</td><td><font size="2">
+OSC2/CLKO/RC15 functions as port I/O (RC15)
+</font></td></tr>
+<tr><td>CONFIG2_OSCIOFNC = OFF</td><td><font size="2">
+OSC2/CLKO/RC15 functions as CLKO (FOSC/2)
+</font></td></tr>
+</table>
+<table frame=box rules=cols cellpadding=3 style="margin:10px;" summary="Primary Oscillator Output Function">
+<tr style="border: 2px solid;"><th>OSCIOFNC</th><th>Primary Oscillator Output Function</th></tr>
+<tr><td>OSCIOFNC = ON</td><td><font size="2">
+OSC2/CLKO/RC15 functions as port I/O (RC15)
+</font></td></tr>
+<tr><td>OSCIOFNC = OFF</td><td><font size="2">
+OSC2/CLKO/RC15 functions as CLKO (FOSC/2)
+</font></td></tr>
+</table>
+<table frame=box rules=cols cellpadding=3 style="margin:10px;" summary="Clock Switching and Monitor">
+<tr style="border: 2px solid;"><th>CONFIG2_FCKSM</th><th>Clock Switching and Monitor</th></tr>
+<tr><td>CONFIG2_FCKSM = CSECME</td><td><font size="2">
+Clock switching is enabled, Fail-Safe Clock Monitor is enabled
+</font></td></tr>
+<tr><td>CONFIG2_FCKSM = CSECMD</td><td><font size="2">
+Clock switching is enabled, Fail-Safe Clock Monitor is disabled
+</font></td></tr>
+<tr><td>CONFIG2_FCKSM = CSDCMD</td><td><font size="2">
+Clock switching and Fail-Safe Clock Monitor are disabled
+</font></td></tr>
+</table>
+<table frame=box rules=cols cellpadding=3 style="margin:10px;" summary="Clock Switching and Monitor">
+<tr style="border: 2px solid;"><th>FCKSM</th><th>Clock Switching and Monitor</th></tr>
+<tr><td>FCKSM = CSECME</td><td><font size="2">
+Clock switching is enabled, Fail-Safe Clock Monitor is enabled
+</font></td></tr>
+<tr><td>FCKSM = CSECMD</td><td><font size="2">
+Clock switching is enabled, Fail-Safe Clock Monitor is disabled
+</font></td></tr>
+<tr><td>FCKSM = CSDCMD</td><td><font size="2">
+Clock switching and Fail-Safe Clock Monitor are disabled
+</font></td></tr>
+</table>
+<table frame=box rules=cols cellpadding=3 style="margin:10px;" summary="Oscillator Select">
+<tr style="border: 2px solid;"><th>CONFIG2_FNOSC</th><th>Oscillator Select</th></tr>
+<tr><td>CONFIG2_FNOSC = FRC</td><td><font size="2">
+Fast RC Oscillator (FRC)
+</font></td></tr>
+<tr><td>CONFIG2_FNOSC = FRCPLL</td><td><font size="2">
+Fast RC Oscillator with PLL module (FRCPLL)
+</font></td></tr>
+<tr><td>CONFIG2_FNOSC = PRI</td><td><font size="2">
+Primary Oscillator (XT, HS, EC)
+</font></td></tr>
+<tr><td>CONFIG2_FNOSC = PRIPLL</td><td><font size="2">
+Primary Oscillator with PLL module (HSPLL, ECPLL)
+</font></td></tr>
+<tr><td>CONFIG2_FNOSC = SOSC</td><td><font size="2">
+Secondary Oscillator (SOSC)
+</font></td></tr>
+<tr><td>CONFIG2_FNOSC = LPRC</td><td><font size="2">
+Low-Power RC Oscillator (LPRC)
+</font></td></tr>
+<tr><td>CONFIG2_FNOSC = FRCDIV</td><td><font size="2">
+Fast RC Oscillator with Postscaler (FRCDIV)
+</font></td></tr>
+</table>
+<table frame=box rules=cols cellpadding=3 style="margin:10px;" summary="Oscillator Select">
+<tr style="border: 2px solid;"><th>FNOSC</th><th>Oscillator Select</th></tr>
+<tr><td>FNOSC = FRC</td><td><font size="2">
+Fast RC Oscillator (FRC)
+</font></td></tr>
+<tr><td>FNOSC = FRCPLL</td><td><font size="2">
+Fast RC Oscillator with PLL module (FRCPLL)
+</font></td></tr>
+<tr><td>FNOSC = PRI</td><td><font size="2">
+Primary Oscillator (XT, HS, EC)
+</font></td></tr>
+<tr><td>FNOSC = PRIPLL</td><td><font size="2">
+Primary Oscillator with PLL module (HSPLL, ECPLL)
+</font></td></tr>
+<tr><td>FNOSC = SOSC</td><td><font size="2">
+Secondary Oscillator (SOSC)
+</font></td></tr>
+<tr><td>FNOSC = LPRC</td><td><font size="2">
+Low-Power RC Oscillator (LPRC)
+</font></td></tr>
+<tr><td>FNOSC = FRCDIV</td><td><font size="2">
+Fast RC Oscillator with Postscaler (FRCDIV)
+</font></td></tr>
+</table>
+<table frame=box rules=cols cellpadding=3 style="margin:10px;" summary="Sec Oscillator Select">
+<tr style="border: 2px solid;"><th>CONFIG2_SOSCSEL</th><th>Sec Oscillator Select</th></tr>
+<tr><td>CONFIG2_SOSCSEL = LPSOSC</td><td><font size="2">
+Low Power Secondary Oscillator (LPSOSC)
+</font></td></tr>
+<tr><td>CONFIG2_SOSCSEL = SOSC</td><td><font size="2">
+Default Secondary Oscillator (SOSC)
+</font></td></tr>
+</table>
+<table frame=box rules=cols cellpadding=3 style="margin:10px;" summary="Sec Oscillator Select">
+<tr style="border: 2px solid;"><th>SOSCSEL</th><th>Sec Oscillator Select</th></tr>
+<tr><td>SOSCSEL = LPSOSC</td><td><font size="2">
+Low Power Secondary Oscillator (LPSOSC)
+</font></td></tr>
+<tr><td>SOSCSEL = SOSC</td><td><font size="2">
+Default Secondary Oscillator (SOSC)
+</font></td></tr>
+</table>
+<table frame=box rules=cols cellpadding=3 style="margin:10px;" summary="Wake-up timer Select">
+<tr style="border: 2px solid;"><th>CONFIG2_WUTSEL</th><th>Wake-up timer Select</th></tr>
+<tr><td>CONFIG2_WUTSEL = FST</td><td><font size="2">
+Fast Wake-up Timer
+</font></td></tr>
+<tr><td>CONFIG2_WUTSEL = LEG</td><td><font size="2">
+Legacy Wake-up Timer
+</font></td></tr>
+</table>
+<table frame=box rules=cols cellpadding=3 style="margin:10px;" summary="Wake-up timer Select">
+<tr style="border: 2px solid;"><th>WUTSEL</th><th>Wake-up timer Select</th></tr>
+<tr><td>WUTSEL = FST</td><td><font size="2">
+Fast Wake-up Timer
+</font></td></tr>
+<tr><td>WUTSEL = LEG</td><td><font size="2">
+Legacy Wake-up Timer
+</font></td></tr>
+</table>
+<table frame=box rules=cols cellpadding=3 style="margin:10px;" summary="Internal External Switch Over Mode">
+<tr style="border: 2px solid;"><th>CONFIG2_IESO</th><th>Internal External Switch Over Mode</th></tr>
+<tr><td>CONFIG2_IESO = OFF</td><td><font size="2">
+IESO mode (Two-Speed Start-up) disabled
+</font></td></tr>
+<tr><td>CONFIG2_IESO = ON</td><td><font size="2">
+IESO mode (Two-Speed Start-up) enabled
+</font></td></tr>
+</table>
+<table frame=box rules=cols cellpadding=3 style="margin:10px;" summary="Internal External Switch Over Mode">
+<tr style="border: 2px solid;"><th>IESO</th><th>Internal External Switch Over Mode</th></tr>
+<tr><td>IESO = OFF</td><td><font size="2">
+IESO mode (Two-Speed Start-up) disabled
+</font></td></tr>
+<tr><td>IESO = ON</td><td><font size="2">
+IESO mode (Two-Speed Start-up) enabled
+</font></td></tr>
+</table>
+<table frame=box rules=cols cellpadding=3 style="margin:10px;" summary="Watchdog Timer Postscaler">
+<tr style="border: 2px solid;"><th>CONFIG1_WDTPS</th><th>Watchdog Timer Postscaler</th></tr>
+<tr><td>CONFIG1_WDTPS = PS1</td><td><font size="2">
+1
+ : 
+1
+</font></td></tr>
+<tr><td>CONFIG1_WDTPS = PS2</td><td><font size="2">
+1
+ : 
+2
+</font></td></tr>
+<tr><td>CONFIG1_WDTPS = PS4</td><td><font size="2">
+1
+ : 
+4
+</font></td></tr>
+<tr><td>CONFIG1_WDTPS = PS8</td><td><font size="2">
+1
+ : 
+8
+</font></td></tr>
+<tr><td>CONFIG1_WDTPS = PS16</td><td><font size="2">
+1
+ : 
+16
+</font></td></tr>
+<tr><td>CONFIG1_WDTPS = PS32</td><td><font size="2">
+1
+ : 
+32
+</font></td></tr>
+<tr><td>CONFIG1_WDTPS = PS64</td><td><font size="2">
+1
+ : 
+64
+</font></td></tr>
+<tr><td>CONFIG1_WDTPS = PS128</td><td><font size="2">
+1
+ : 
+128
+</font></td></tr>
+<tr><td>CONFIG1_WDTPS = PS256</td><td><font size="2">
+1
+ : 
+256
+</font></td></tr>
+<tr><td>CONFIG1_WDTPS = PS512</td><td><font size="2">
+1
+ : 
+512
+</font></td></tr>
+<tr><td>CONFIG1_WDTPS = PS1024</td><td><font size="2">
+1
+ : 
+1,024
+</font></td></tr>
+<tr><td>CONFIG1_WDTPS = PS2048</td><td><font size="2">
+1
+ : 
+2,048
+</font></td></tr>
+<tr><td>CONFIG1_WDTPS = PS4096</td><td><font size="2">
+1
+ : 
+4,096
+</font></td></tr>
+<tr><td>CONFIG1_WDTPS = PS8192</td><td><font size="2">
+1
+ : 
+8,192
+</font></td></tr>
+<tr><td>CONFIG1_WDTPS = PS16384</td><td><font size="2">
+1
+ : 
+16,384
+</font></td></tr>
+<tr><td>CONFIG1_WDTPS = PS32768</td><td><font size="2">
+1
+ : 
+32,768
+</font></td></tr>
+</table>
+<table frame=box rules=cols cellpadding=3 style="margin:10px;" summary="Watchdog Timer Postscaler">
+<tr style="border: 2px solid;"><th>WDTPS</th><th>Watchdog Timer Postscaler</th></tr>
+<tr><td>WDTPS = PS1</td><td><font size="2">
+1
+ : 
+1
+</font></td></tr>
+<tr><td>WDTPS = PS2</td><td><font size="2">
+1
+ : 
+2
+</font></td></tr>
+<tr><td>WDTPS = PS4</td><td><font size="2">
+1
+ : 
+4
+</font></td></tr>
+<tr><td>WDTPS = PS8</td><td><font size="2">
+1
+ : 
+8
+</font></td></tr>
+<tr><td>WDTPS = PS16</td><td><font size="2">
+1
+ : 
+16
+</font></td></tr>
+<tr><td>WDTPS = PS32</td><td><font size="2">
+1
+ : 
+32
+</font></td></tr>
+<tr><td>WDTPS = PS64</td><td><font size="2">
+1
+ : 
+64
+</font></td></tr>
+<tr><td>WDTPS = PS128</td><td><font size="2">
+1
+ : 
+128
+</font></td></tr>
+<tr><td>WDTPS = PS256</td><td><font size="2">
+1
+ : 
+256
+</font></td></tr>
+<tr><td>WDTPS = PS512</td><td><font size="2">
+1
+ : 
+512
+</font></td></tr>
+<tr><td>WDTPS = PS1024</td><td><font size="2">
+1
+ : 
+1,024
+</font></td></tr>
+<tr><td>WDTPS = PS2048</td><td><font size="2">
+1
+ : 
+2,048
+</font></td></tr>
+<tr><td>WDTPS = PS4096</td><td><font size="2">
+1
+ : 
+4,096
+</font></td></tr>
+<tr><td>WDTPS = PS8192</td><td><font size="2">
+1
+ : 
+8,192
+</font></td></tr>
+<tr><td>WDTPS = PS16384</td><td><font size="2">
+1
+ : 
+16,384
+</font></td></tr>
+<tr><td>WDTPS = PS32768</td><td><font size="2">
+1
+ : 
+32,768
+</font></td></tr>
+</table>
+<table frame=box rules=cols cellpadding=3 style="margin:10px;" summary="WDT Prescaler">
+<tr style="border: 2px solid;"><th>CONFIG1_FWPSA</th><th>WDT Prescaler</th></tr>
+<tr><td>CONFIG1_FWPSA = PR32</td><td><font size="2">
+Prescaler ratio of 1
+ : 
+32
+</font></td></tr>
+<tr><td>CONFIG1_FWPSA = PR128</td><td><font size="2">
+Prescaler ratio of 1
+ : 
+128
+</font></td></tr>
+</table>
+<table frame=box rules=cols cellpadding=3 style="margin:10px;" summary="WDT Prescaler">
+<tr style="border: 2px solid;"><th>FWPSA</th><th>WDT Prescaler</th></tr>
+<tr><td>FWPSA = PR32</td><td><font size="2">
+Prescaler ratio of 1
+ : 
+32
+</font></td></tr>
+<tr><td>FWPSA = PR128</td><td><font size="2">
+Prescaler ratio of 1
+ : 
+128
+</font></td></tr>
+</table>
+<table frame=box rules=cols cellpadding=3 style="margin:10px;" summary="Watchdog Timer Window">
+<tr style="border: 2px solid;"><th>CONFIG1_WINDIS</th><th>Watchdog Timer Window</th></tr>
+<tr><td>CONFIG1_WINDIS = OFF</td><td><font size="2">
+Windowed Watchdog Timer enabled; FWDTEN must be 1
+</font></td></tr>
+<tr><td>CONFIG1_WINDIS = ON</td><td><font size="2">
+Standard Watchdog Timer enabled,(Windowed-mode is disabled)
+</font></td></tr>
+</table>
+<table frame=box rules=cols cellpadding=3 style="margin:10px;" summary="Watchdog Timer Window">
+<tr style="border: 2px solid;"><th>WINDIS</th><th>Watchdog Timer Window</th></tr>
+<tr><td>WINDIS = OFF</td><td><font size="2">
+Windowed Watchdog Timer enabled; FWDTEN must be 1
+</font></td></tr>
+<tr><td>WINDIS = ON</td><td><font size="2">
+Standard Watchdog Timer enabled,(Windowed-mode is disabled)
+</font></td></tr>
+</table>
+<table frame=box rules=cols cellpadding=3 style="margin:10px;" summary="Watchdog Timer Enable">
+<tr style="border: 2px solid;"><th>CONFIG1_FWDTEN</th><th>Watchdog Timer Enable</th></tr>
+<tr><td>CONFIG1_FWDTEN = OFF</td><td><font size="2">
+Watchdog Timer is disabled
+</font></td></tr>
+<tr><td>CONFIG1_FWDTEN = ON</td><td><font size="2">
+Watchdog Timer is enabled
+</font></td></tr>
+</table>
+<table frame=box rules=cols cellpadding=3 style="margin:10px;" summary="Watchdog Timer Enable">
+<tr style="border: 2px solid;"><th>FWDTEN</th><th>Watchdog Timer Enable</th></tr>
+<tr><td>FWDTEN = OFF</td><td><font size="2">
+Watchdog Timer is disabled
+</font></td></tr>
+<tr><td>FWDTEN = ON</td><td><font size="2">
+Watchdog Timer is enabled
+</font></td></tr>
+</table>
+<table frame=box rules=cols cellpadding=3 style="margin:10px;" summary="Comm Channel Select">
+<tr style="border: 2px solid;"><th>CONFIG1_ICS</th><th>Comm Channel Select</th></tr>
+<tr><td>CONFIG1_ICS = PGx3</td><td><font size="2">
+Emulator EMUC3/EMUD3 pins are shared with PGC3/PGD3
+</font></td></tr>
+<tr><td>CONFIG1_ICS = PGx2</td><td><font size="2">
+Emulator EMUC2/EMUD2 pins are shared with PGC2/PGD2
+</font></td></tr>
+<tr><td>CONFIG1_ICS = PGx1</td><td><font size="2">
+Emulator EMUC1/EMUD1 pins are shared with PGC1/PGD1
+</font></td></tr>
+</table>
+<table frame=box rules=cols cellpadding=3 style="margin:10px;" summary="Comm Channel Select">
+<tr style="border: 2px solid;"><th>ICS</th><th>Comm Channel Select</th></tr>
+<tr><td>ICS = PGx3</td><td><font size="2">
+Emulator EMUC3/EMUD3 pins are shared with PGC3/PGD3
+</font></td></tr>
+<tr><td>ICS = PGx2</td><td><font size="2">
+Emulator EMUC2/EMUD2 pins are shared with PGC2/PGD2
+</font></td></tr>
+<tr><td>ICS = PGx1</td><td><font size="2">
+Emulator EMUC1/EMUD1 pins are shared with PGC1/PGD1
+</font></td></tr>
+</table>
+<table frame=box rules=cols cellpadding=3 style="margin:10px;" summary="Background Debug">
+<tr style="border: 2px solid;"><th>CONFIG1_BKBUG</th><th>Background Debug</th></tr>
+<tr><td>CONFIG1_BKBUG = ON</td><td><font size="2">
+Device resets into Debug mode
+</font></td></tr>
+<tr><td>CONFIG1_BKBUG = OFF</td><td><font size="2">
+Device resets into Operational mode
+</font></td></tr>
+</table>
+<table frame=box rules=cols cellpadding=3 style="margin:10px;" summary="Background Debug">
+<tr style="border: 2px solid;"><th>BKBUG</th><th>Background Debug</th></tr>
+<tr><td>BKBUG = ON</td><td><font size="2">
+Device resets into Debug mode
+</font></td></tr>
+<tr><td>BKBUG = OFF</td><td><font size="2">
+Device resets into Operational mode
+</font></td></tr>
+</table>
+<table frame=box rules=cols cellpadding=3 style="margin:10px;" summary="General Code Segment Write Protect">
+<tr style="border: 2px solid;"><th>CONFIG1_GWRP</th><th>General Code Segment Write Protect</th></tr>
+<tr><td>CONFIG1_GWRP = ON</td><td><font size="2">
+Writes to program memory are disabled
+</font></td></tr>
+<tr><td>CONFIG1_GWRP = OFF</td><td><font size="2">
+Writes to program memory are allowed
+</font></td></tr>
+</table>
+<table frame=box rules=cols cellpadding=3 style="margin:10px;" summary="General Code Segment Write Protect">
+<tr style="border: 2px solid;"><th>GWRP</th><th>General Code Segment Write Protect</th></tr>
+<tr><td>GWRP = ON</td><td><font size="2">
+Writes to program memory are disabled
+</font></td></tr>
+<tr><td>GWRP = OFF</td><td><font size="2">
+Writes to program memory are allowed
+</font></td></tr>
+</table>
+<table frame=box rules=cols cellpadding=3 style="margin:10px;" summary="General Code Segment Code Protect">
+<tr style="border: 2px solid;"><th>CONFIG1_GCP</th><th>General Code Segment Code Protect</th></tr>
+<tr><td>CONFIG1_GCP = ON</td><td><font size="2">
+Code protection is enabled for the entire program memory space
+</font></td></tr>
+<tr><td>CONFIG1_GCP = OFF</td><td><font size="2">
+Code protection is disabled
+</font></td></tr>
+</table>
+<table frame=box rules=cols cellpadding=3 style="margin:10px;" summary="General Code Segment Code Protect">
+<tr style="border: 2px solid;"><th>GCP</th><th>General Code Segment Code Protect</th></tr>
+<tr><td>GCP = ON</td><td><font size="2">
+Code protection is enabled for the entire program memory space
+</font></td></tr>
+<tr><td>GCP = OFF</td><td><font size="2">
+Code protection is disabled
+</font></td></tr>
+</table>
+<table frame=box rules=cols cellpadding=3 style="margin:10px;" summary="JTAG Port Enable">
+<tr style="border: 2px solid;"><th>CONFIG1_JTAGEN</th><th>JTAG Port Enable</th></tr>
+<tr><td>CONFIG1_JTAGEN = OFF</td><td><font size="2">
+JTAG port is disabled
+</font></td></tr>
+<tr><td>CONFIG1_JTAGEN = ON</td><td><font size="2">
+JTAG port is enabled
+</font></td></tr>
+</table>
+<table frame=box rules=cols cellpadding=3 style="margin:10px;" summary="JTAG Port Enable">
+<tr style="border: 2px solid;"><th>JTAGEN</th><th>JTAG Port Enable</th></tr>
+<tr><td>JTAGEN = OFF</td><td><font size="2">
+JTAG port is disabled
+</font></td></tr>
+<tr><td>JTAGEN = ON</td><td><font size="2">
+JTAG port is enabled
+</font></td></tr>
+</table>
