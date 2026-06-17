@@ -16,7 +16,7 @@ Voici comment est structuré notre dépôt :
 │   ├── Projet_2023_2024/
 │   └── Projet_2024_2025/
 │
-├── Projet Elec - Machine de Turing/          # Dossier principal contenant le matériel de conception
+├── Projet Elec - Machine de Turing/          # Dossier principal 
 │   ├── Code/                                 # Fichiers sources et scripts annexes
 │   ├── Datasheets/                           # Documentations techniques des composants électroniques
 │   ├── KiCad/
@@ -29,4 +29,4 @@ Voici comment est structuré notre dépôt :
 ├── lib_turing.c                              # Code source des fonctions de la Machine de Turing
 ├── lib_turing.h                              # Fichier d'en-tête (prototypes et structures)
 ├── main.c                                    # Programme principal (logique algorithmique)
-└── README.md                                 # Documentation du dépôt
+└── README.md                                 
